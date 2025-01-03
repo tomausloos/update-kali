@@ -19,9 +19,9 @@ if 'Kali' in release:
     packages_to_install = ['most', 'ttf-mscorefonts-installer', 'pydf', 'htop', 'gobuster', 'amass',
                            'golang', 'exif', 'hexedit', 'jq', 'python3-pip', 'python3-venv',
                            'apt-transport-https', 'curl', 'filezilla', 'meld', 'ncat', 'net-tools',
-                           'tmux', 'bash-completion', 'ieee-data', 'python3-netaddr',
+                            'bash-completion', 'ieee-data', 'python3-netaddr',
                            'ruby-full', 'cewl', 'nbtscan', 'tree', 'upx-ucl',
-                           'exe2hexbat', 'shellter', 'grc', 'tor', 'torbrowser-launcher']
+                           'exe2hexbat', 'grc']
 
     # These kali packages will be removed
     packages_to_remove = []
