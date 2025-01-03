@@ -51,15 +51,10 @@ if 'Kali' in release:
     # These git repositories will be synced to the 'external repo' directory
     external_tools_directory = '/opt'
     ext_repositories_to_sync =  [
-                                'https://github.com/swisskyrepo/PayloadsAllTheThings',
+                                'https://github.com/swisskyrepo/PayloadsAllTheThings
+                                'https://github.com/danielmiessler/SecLists',
                                 ]
 
-    # These git repositories will be synced to the 'personal repo' directory. I use my home directory.
-    personal_repo_directory = os.getenv("HOME")
-    personal_repositories_to_sync = [
-                                    'git@github.com:rafaelh/dotfiles',
-                                    'git@github.com:rafaelh/.private'
-                                    ]
 
     # Next, take a look in the /scripts directory. Every script ending in .sh or .py will be run,
     # provided it's # executable. For example, the current scripts install VS Code, Google Chrome and
@@ -102,13 +97,6 @@ if 'Ubuntu' in release and not are_we_on_wsl:
     ext_repositories_to_sync =  [
                                 ]
 
-    # These git repositories will be synced to the 'personal repo' directory. I use my home directory.
-    personal_repo_directory = os.getenv("HOME")
-    personal_repositories_to_sync = [
-                                    'git@github.com:rafaelh/dotfiles',
-                                    'git@github.com:rafaelh/.private'
-                                    ]
-
     # Next, take a look in the /scripts directory. Every script ending in .sh or .py will be run,
     # provided it's # executable. For example, the current scripts install VS Code, Google Chrome and
     # Typora. Any script that goes in this directory should be written so it can run multiple times
@@ -146,12 +134,7 @@ if 'Ubuntu' in release and are_we_on_wsl:
     ext_repositories_to_sync =  [
                                 ]
 
-    # These git repositories will be synced to the 'personal repo' directory. I use my home directory.
-    personal_repo_directory = os.getenv("HOME")
-    personal_repositories_to_sync = [
-                                    'git@github.com:rafaelh/dotfiles',
-                                    'git@github.com:rafaelh/.private'
-                                    ]
+
 
     # Next, take a look in the /scripts directory. Every script ending in .sh or .py will be run,
     # provided it's # executable. For example, the current scripts install VS Code, Google Chrome and
