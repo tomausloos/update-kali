@@ -20,7 +20,7 @@ if 'Kali' in release:
                            'golang', 'exif', 'hexedit', 'jq', 'python3-pip', 'python3-venv',
                            'apt-transport-https', 'curl', 'filezilla', 'meld', 'ncat', 'net-tools',
                            'tmux', 'bash-completion', 'ieee-data', 'python3-netaddr',
-                           'ruby-full', 'powercat', 'cewl', 'nbtscan', 'tree', 'upx-ucl',
+                           'ruby-full', 'cewl', 'nbtscan', 'tree', 'upx-ucl',
                            'exe2hexbat', 'shellter', 'grc', 'tor', 'torbrowser-launcher']
 
     # These kali packages will be removed
