@@ -116,7 +116,7 @@ if "Kali" in release:
         "https://github.com/gremwell/o365enum",
         "https://github.com/airbus-seclab/ilo4_toolbox",
         "https://github.com/peass-ng/PEASS-ng",
-        "https://github.com/RUB-NDS/PRET/blob/master/README.md",
+        "https://github.com/RUB-NDS/PRET",
         "https://github.com/Anon-Exploiter/SUID3NUM",
         "https://github.com/Pepelux/sippts",
         "https://github.com/jtesta/ssh-audit",
