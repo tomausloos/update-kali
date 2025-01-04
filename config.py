@@ -83,10 +83,6 @@ if "Kali" in release:
     # These git repositories will be synced to the 'external repo' directory
 
     external_tools_directory = "/opt"
-    ext_repositories_to_sync = [
-        "https://github.com/swisskyrepo/PayloadsAllTheThings",
-        "https://github.com/danielmiessler/SecLists",
-    ]
 
     external_tools_directory_dns = "/opt/dns"
 
@@ -162,6 +158,8 @@ if "Kali" in release:
     external_tools_directory_utility = "/opt/utility"
 
     ext_repositories_utility = [
+        "https://github.com/swisskyrepo/PayloadsAllTheThings",
+        "https://github.com/danielmiessler/SecLists",
         "https://github.com/gchq/CyberChef",
         "https://github.com/Hoplite-Consulting/EPSS-CLI",
         "https://github.com/sean-t-smith/Extreme_Breach_Masks",

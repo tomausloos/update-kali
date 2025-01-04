@@ -38,7 +38,6 @@ from config import (
     pip_packages,
     gem_packages,
     golang_modules_to_install,
-    ext_repositories_to_sync,
     ext_repositories_dns,
     ext_repositories_infra,
     ext_repositories_mobile,
@@ -190,8 +189,6 @@ def main():
         print_message("blue", "Syncing git repositories")
         # for repo in personal_repositories_to_sync:
         #    sync_git_repo(repo, personal_repo_directory)
-        for repo in ext_repositories_to_sync:
-            sync_git_repo(repo, external_tools_directory)
         for repo in ext_repositories_dns:
             sync_git_repo(repo, external_tools_directory_dns)
         for repo in ext_repositories_infra:
