@@ -25,7 +25,6 @@ from updateactions import (
     update_go_packages,
 )
 from config import (
-    personal_repo_directory,
     external_tools_directory_dns,
     external_tools_directory_mobile,
     external_tools_directory_infra,
@@ -184,7 +183,6 @@ def main():
 
     # Create and remove specified directories
     print_message("blue", "Checking directory structure")
-    create_directory(personal_repo_directory)
     for d in opt_dirs:
         create_directory(d)
     for directory in directories_to_remove:
