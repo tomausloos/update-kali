@@ -167,6 +167,7 @@ def main():
     ]
 
     for d in opt_dirs:
+        create_directory(d)
         take_ownership(d)
 
     # Install golang tools
