@@ -59,7 +59,7 @@ def elevate_privileges():
 
 
 def take_ownership(directory):
-    username = os.path.expanduser("~").split("/")[2]
+    username = "kali"
     cmdstring = "sudo chown " + username + ":" + username + " " + directory
     os.system(cmdstring)
 
