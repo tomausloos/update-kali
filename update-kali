@@ -166,9 +166,13 @@ def main():
         external_tools_directory_mobile,
     ]
 
+    # Create and remove specified directories
+    print_message("blue", "Checking directory structure")
     for d in opt_dirs:
         create_directory(d)
         take_ownership(d)
+    for directory in directories_to_remove:
+        remove_directory(directory)
 
     # Install golang tools
     if not os.path.exists("/usr/bin/go"):
@@ -180,13 +184,6 @@ def main():
                 install_golang_module(module, golang_install_directory)
         if args.rebuildgo or args.full:
             update_go_packages(golang_modules_to_install, golang_install_directory)
-
-    # Create and remove specified directories
-    print_message("blue", "Checking directory structure")
-    for d in opt_dirs:
-        create_directory(d)
-    for directory in directories_to_remove:
-        remove_directory(directory)
 
     # Sync git repositories
     if not args.noreposync:
