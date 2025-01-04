@@ -59,15 +59,7 @@ if "Kali" in release:
     packages_to_remove = []
 
     # These python packages will be installed globally
-    pip_packages = [
-        "pipenv",
-        "pylint",
-        "dnsgen",
-        "stegcracker",
-        "truffleHog",
-        "apkleaks",
-        "defaultcreds-cheat-sheet",
-    ]
+    pip_packages = []
 
     # These gem packages will be installed globally
     gem_packages = ["wpscan"]
