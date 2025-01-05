@@ -71,7 +71,7 @@ if "Kali" in release:
     # export GOROOT=/usr/lib/go
     # export GOPATH=$HOME/go
     # export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-    golang_install_directory = "/opt"
+    golang_install_directory = "/usr/lib/go/modules/"
     golang_modules_to_install = [
         "github.com/lc/gau",
         "github.com/hakluke/hakrawler",
