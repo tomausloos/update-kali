@@ -195,3 +195,25 @@ def run_scripts():
                 os.system(cmdstring)
     else:
         print_message("error", "'scripts' directory is missing")
+
+
+def add_line_to_zshrc(line):
+    """
+    Appends a line to the .zshrc file located at /home/kali/.zshrc.
+
+    :param line: The line to be added to the .zshrc file.
+    """
+    zshrc_path = "/home/kali/.zshrc"
+
+    try:
+        with open(zshrc_path, "r") as file:
+            lines = file.readlines()
+
+        if line not in [l.strip() for l in lines]:
+            with open(zshrc_path, "a") as file:
+                file.write("\n" + line + "\n")
+            print("Line added to .zshrc successfully.")
+        else:
+            print_message("yellow", "Line already exists in .zshrc.")
+    except Exception as e:
+        print_message("error", f"{e}")

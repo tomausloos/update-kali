@@ -25,6 +25,7 @@ if "Kali" in release:
 
     # These kali packages will be installed
     packages_to_install = [
+        "terminator",
         "most",
         "ttf-mscorefonts-installer",
         "pydf",
@@ -220,6 +221,12 @@ if "Kali" in release:
     # provided it's # executable. For example, the current scripts install VS Code, Google Chrome and
     # Typora. Any script that goes in this directory should be written so it can run multiple times
     # without causing problems.
+
+    zshrc_configuration = [
+        "alias c='clear'",
+        "export GOROOT=/usr/lib/go",
+        "export GOPATH=$HOME/go",
+    ]
 
 if "Ubuntu" in release and not are_we_on_wsl:
     # These directories will be removed from your home directory

@@ -23,6 +23,7 @@ from updateactions import (
     update_pip_packages,
     update_gems,
     update_go_packages,
+    add_line_to_zshrc,
 )
 from config import (
     external_tools_directory_dns,
@@ -45,6 +46,7 @@ from config import (
     ext_repositories_utility,
     ext_repositories_web,
     golang_install_directory,
+    zshrc_configuration,
 )
 
 
@@ -86,15 +88,6 @@ def main():
     )
     args = argument_parser.parse_args()
 
-    # Run checks
-    if not os.getenv("GOROOT"):
-        print_message(
-            "error", "GOROOT not set. Add 'export GOROOT=/usr/lib/go' to your .bashrc"
-        )
-    if not os.getenv("GOPATH"):
-        print_message(
-            "error", "GOPATH not set. Add 'export GOPATH=$HOME/go' to your .bashrc"
-        )
     if elevate_privileges():
         sys.exit(1)
 
@@ -116,6 +109,9 @@ def main():
         if "Already up to date" not in script_git_status_output.decode():
             print_message("error", "Script Updated. Please run the new version.\n")
             sys.exit(1)
+
+    for line in zshrc_configuration:
+        add_line_to_zshrc(line)
 
     # Update and upgrade apt packages
     print_message("blue", "General Update")
