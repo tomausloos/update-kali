@@ -224,6 +224,9 @@ if "Kali" in release:
 
     zshrc_configuration = [
         "alias c='clear'",
+        "alias opt='cd /opt && ls",
+        "alias profile='sudo nano ~/.zshrc",
+        "alias save='source ~/.zshrc",
         "export GOROOT=/usr/lib/go",
         "export GOPATH=$HOME/go",
     ]
