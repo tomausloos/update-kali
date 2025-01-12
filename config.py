@@ -25,6 +25,8 @@ if "Kali" in release:
 
     # These kali packages will be installed
     packages_to_install = [
+        "bloodhound",
+        "xfreerdp",
         "terminator",
         "most",
         "ttf-mscorefonts-installer",
@@ -117,6 +119,7 @@ if "Kali" in release:
         "https://github.com/Anon-Exploiter/SUID3NUM",
         "https://github.com/Pepelux/sippts",
         "https://github.com/jtesta/ssh-audit",
+        "https://github.com/jpillora/chisel",
         "https://github.com/nullt3r/udpx",
         "https://github.com/trustedsec/unicorn",
         "https://github.com/c3c/ADExplorerSnapshot.py",

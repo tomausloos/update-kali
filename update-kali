@@ -5,6 +5,7 @@ import os
 import apt
 import subprocess
 import sys
+import logging
 import argparse
 from updateactions import (
     print_message,
@@ -48,6 +49,11 @@ from config import (
     golang_install_directory,
     zshrc_configuration,
 )
+
+
+logging.basicConfig(filename='/var/log/update-kali.log', level=logging.INFO)
+logging.info('Starting update process')
+
 
 
 def main():
@@ -115,7 +121,11 @@ def main():
 
     # Update and upgrade apt packages
     print_message("blue", "General Update")
-    update_packages()
+    try:
+        update_packages()
+    except Exception as e:
+        print_message("error", f"Failed to update packages: {e}")
+        sys.exit(1)
 
     # Install or remove specified apt packages
     print_message("blue", "Checking installed packages")
