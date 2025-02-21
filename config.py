@@ -40,6 +40,7 @@ if "Kali" in release:
         "jq",
         "python3-pip",
         "python3-venv",
+        "libreoffice",
         "apt-transport-https",
         "curl",
         "filezilla",
@@ -56,6 +57,12 @@ if "Kali" in release:
         "upx-ucl",
         "exe2hexbat",
         "grc",
+        "libsasl2-dev",
+        "python-dev-is-python3",
+        "libldap2-dev",
+        "libssl-dev",
+        "cupp",
+        "anarchy",
     ]
 
     # These kali packages will be removed
@@ -136,6 +143,9 @@ if "Kali" in release:
         "https://github.com/ShawnDEvans/smbmap",
         "https://github.com/GoSecure/WSuspicious",
         "https://github.com/outflanknl/PrintNightmare",
+        "https://github.com/topotam/PetitPotam",
+        "https://github.com/zer1t0/certi",
+        "https://github.com/CompassSecurity/BloodHoundQueries",
     ]
 
     external_tools_directory_mobile = "/opt/mobile"
@@ -175,6 +185,7 @@ if "Kali" in release:
         "https://github.com/vinitkumar/json2xml",
         "https://github.com/radareorg/radare2",
         "https://github.com/cycurity/wister",
+        "https://github.com/urbanadventurer/username-anarchy",
     ]
 
     external_tools_directory_web = "/opt/web"
@@ -225,6 +236,8 @@ if "Kali" in release:
     # Typora. Any script that goes in this directory should be written so it can run multiple times
     # without causing problems.
 
+    # TODO: fix this by using a template file instead
+
     zshrc_configuration = [
         "alias c='clear'",
         "alias opt='cd /opt && ls",
@@ -232,6 +245,21 @@ if "Kali" in release:
         "alias save='source ~/.zshrc",
         "export GOROOT=/usr/lib/go",
         "export GOPATH=$HOME/go",
+        " ",
+        "function auto_activate_virtualenv() {",
+        '  if [ -d ".venv" ]; then',
+        '    if [ -z "$VIRTUAL_ENV" ]; then',
+        "      source .venv/bin/activate",
+        '      echo "Activated virtual environment in $(pwd)"',
+        "    fi",
+        '  elif [ ! -z "$VIRTUAL_ENV" ]; then',
+        "    deactivate",
+        '    echo "Deactivated virtual environment"',
+        "  fi",
+        "}",
+        "autoload -Uz add-zsh-hook",
+        "add-zsh-hook chpwd auto_activate_virtualenv",
+        "auto_activate_virtualenv",
     ]
 
 if "Ubuntu" in release and not are_we_on_wsl:
